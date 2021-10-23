@@ -44,7 +44,11 @@ namespace Timegraphik.Forms {
             }
         }
 
+        private SQLSystem sql;
         private void Form_OnLoad(object sender, EventArgs e) {
+            sql = new SQLSystem();
+            sql.Start();
+
             Storage.Load();
             mainGui = new MainGui(Controls);
             dbGui = new DatabaseGui(Controls);

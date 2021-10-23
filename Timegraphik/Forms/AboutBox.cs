@@ -17,7 +17,7 @@ namespace Timetabled.Forms {
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
             linkLabel1.LinkVisited = true;
-            Process.Start("http://bruh.ltd");
+            Process.Start("https://web.bruh.ltd/");
         }
     }
 }

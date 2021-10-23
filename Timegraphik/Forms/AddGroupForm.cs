@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Timetabled.GUI;
+using Timegraphik.GUI;
 
-namespace Timetabled.Forms {
+namespace Timegraphik.Forms {
     public partial class AddGroupForm : Form {
         public AddGroupForm() {
             InitializeComponent();

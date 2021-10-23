@@ -10,12 +10,12 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Globalization;
 using System.Web;
-using Timetabled.Data;
-using Timetabled.GUI;
+using Timegraphik.Data;
+using Timegraphik.GUI;
 using System.Media;
 using System.IO;
 
-namespace Timetabled.Forms {
+namespace Timegraphik.Forms {
     public partial class MainForm : Form {
         public static Storage Storage { get; } = new Storage();
         MainGui mainGui;

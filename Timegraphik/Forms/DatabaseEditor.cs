@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Timetabled.Data;
-using Timetabled.GUI;
+using Timegraphik.Data;
+using Timegraphik.GUI;
 
-namespace Timetabled.Forms {
+namespace Timegraphik.Forms {
     public partial class DatabaseEditor : Form {
         Storage storage;
         DatabaseGui gui;

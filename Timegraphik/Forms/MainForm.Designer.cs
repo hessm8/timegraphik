@@ -1,5 +1,5 @@
 ﻿
-namespace Timetabled.Forms {
+namespace Timegraphik.Forms {
     partial class MainForm {
         /// <summary>
         /// Required designer variable.
@@ -31,8 +31,8 @@ namespace Timetabled.Forms {
             this.базаДанныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.HelpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FiilRandomMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.HelpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TestLoc = new System.Windows.Forms.Button();
             this.CancelChangesButton = new System.Windows.Forms.Button();
             this.AcceptChangesButton = new System.Windows.Forms.Button();
@@ -86,14 +86,21 @@ namespace Timetabled.Forms {
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.editToolStripMenuItem.Text = "Настроить";
             // 
             // clearToolStripMenuItem
             // 
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            this.clearToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.clearToolStripMenuItem.Text = "Очистить";
+            // 
+            // FiilRandomMenuItem
+            // 
+            this.FiilRandomMenuItem.Name = "FiilRandomMenuItem";
+            this.FiilRandomMenuItem.Size = new System.Drawing.Size(148, 20);
+            this.FiilRandomMenuItem.Text = "Случайное расписание";
+            this.FiilRandomMenuItem.Click += new System.EventHandler(this.FillRandomData);
             // 
             // HelpMenuItem
             // 
@@ -101,13 +108,6 @@ namespace Timetabled.Forms {
             this.HelpMenuItem.Size = new System.Drawing.Size(65, 20);
             this.HelpMenuItem.Text = "Справка";
             this.HelpMenuItem.Click += new System.EventHandler(this.HelpMenuItem_Click);
-            // 
-            // заполнитьToolStripMenuItem
-            // 
-            this.FiilRandomMenuItem.Name = "FiilRandomMenuItem";
-            this.FiilRandomMenuItem.Size = new System.Drawing.Size(148, 20);
-            this.FiilRandomMenuItem.Text = "Случайное расписание";
-            this.FiilRandomMenuItem.Click += new System.EventHandler(this.FillRandomData);
             // 
             // TestLoc
             // 
@@ -190,7 +190,7 @@ namespace Timetabled.Forms {
             this.MinimumSize = new System.Drawing.Size(470, 569);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Timetabled";
+            this.Text = "Timegraphik";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_OnClosed);
             this.Load += new System.EventHandler(this.Form_OnLoad);
             this.menuStrip1.ResumeLayout(false);

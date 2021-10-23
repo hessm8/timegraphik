@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Timetabled.Data {
+namespace Timegraphik.Data {
     public class ScheduleData {
         public ScheduleData() {
             groups = new List<string>();

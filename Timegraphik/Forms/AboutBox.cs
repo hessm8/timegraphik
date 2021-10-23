@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 
-namespace Timetabled.Forms {
+namespace Timegraphik.Forms {
     public partial class AboutBox : Form {
         public AboutBox() {
             InitializeComponent();

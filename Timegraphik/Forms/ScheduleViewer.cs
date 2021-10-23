@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Microsoft.Web.WebView2.Core;
 using Microsoft.Win32;
 
-namespace Timetabled.Forms {
+namespace Timegraphik.Forms {
     public partial class ScheduleViewer : Form {
         string URL { get; }
         readonly Size ButtonSize;

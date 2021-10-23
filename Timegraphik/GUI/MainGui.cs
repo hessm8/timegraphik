@@ -6,13 +6,13 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Globalization;
-using Timetabled.Helpers;
-using Timetabled.Data;
+using Timegraphik.Helpers;
+using Timegraphik.Data;
 using System.IO;
-using Timetabled.Forms;
+using Timegraphik.Forms;
 using System.ComponentModel;
 
-namespace Timetabled.GUI {
+namespace Timegraphik.GUI {
     public class MainGui : GuiManager {
         public override void Initialize() {
             Calendar = Access<MonthCalendar>("SelectDate");

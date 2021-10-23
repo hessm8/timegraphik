@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Timetabled.Helpers {
+namespace Timegraphik.Helpers {
     public class State<TField> {
         public TField Previous { get; private set; }
         public TField Latest { get; private set; }

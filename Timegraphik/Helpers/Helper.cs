@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Timetabled.Helpers {
+namespace Timegraphik.Helpers {
     public static class Helper {
         private static int randomSeed = 0;
         public static int Random(int count) {

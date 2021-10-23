@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Timetabled.Data {
+namespace Timegraphik.Data {
     [Serializable()]
     public class Lesson : ISerializable {
         public Lesson(string _subject = null, string _teacher = null,

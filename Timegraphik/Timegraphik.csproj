@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{368A557C-BEC6-4552-9ADF-64BED50973A8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Timetabled</RootNamespace>
-    <AssemblyName>Timetabled</AssemblyName>
+    <RootNamespace>Timegraphik</RootNamespace>
+    <AssemblyName>Timegraphik</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -169,6 +169,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

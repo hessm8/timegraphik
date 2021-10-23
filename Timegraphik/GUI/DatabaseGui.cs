@@ -6,10 +6,10 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Globalization;
-using Timetabled.Helpers;
-using Timetabled.Data;
+using Timegraphik.Helpers;
+using Timegraphik.Data;
 
-namespace Timetabled.GUI {
+namespace Timegraphik.GUI {
     public class DatabaseGui : GuiManager {
         public DatabaseGui(Control.ControlCollection _control)
             : base(_control) { }

@@ -5,11 +5,11 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
-using Timetabled.Helpers;
-using Timetabled.Data;
-using Timetabled.Forms;
+using Timegraphik.Helpers;
+using Timegraphik.Data;
+using Timegraphik.Forms;
 
-namespace Timetabled.GUI {
+namespace Timegraphik.GUI {
     public class ScheduleField : ComboBox {
         // Gui access
         private MainGui Gui { get; }

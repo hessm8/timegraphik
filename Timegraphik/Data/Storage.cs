@@ -5,9 +5,9 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
 using GroupToLessons = System.Collections.Generic
-    .Dictionary<string, Timetabled.Data.Lesson[]>;
+    .Dictionary<string, Timegraphik.Data.Lesson[]>;
 
-namespace Timetabled.Data {
+namespace Timegraphik.Data {
     public class Storage {        
         public Storage() {
             Data = new ScheduleData();

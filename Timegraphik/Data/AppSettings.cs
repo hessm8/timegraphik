@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 
-namespace Timetabled.Data {
+namespace Timegraphik.Data {
     public class AppSettings {
         public bool AutosaveOnCategoryChange { get; set; }
         public bool UseViewerForm { get; set; }

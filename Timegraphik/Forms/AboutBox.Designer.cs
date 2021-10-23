@@ -1,5 +1,5 @@
 ﻿
-namespace Timetabled.Forms {
+namespace Timegraphik.Forms {
     partial class AboutBox {
         /// <summary>
         /// Required designer variable.

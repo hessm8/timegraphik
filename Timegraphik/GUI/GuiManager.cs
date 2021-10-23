@@ -6,11 +6,11 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Globalization;
-using Timetabled.Helpers;
-using Timetabled.Data;
-using Timetabled.Forms;
+using Timegraphik.Helpers;
+using Timegraphik.Data;
+using Timegraphik.Forms;
 
-namespace Timetabled.GUI {
+namespace Timegraphik.GUI {
     public abstract class GuiManager {
         public abstract void Initialize();
         public GuiManager(Control.ControlCollection _control) {

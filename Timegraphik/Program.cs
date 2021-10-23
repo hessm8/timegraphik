@@ -4,10 +4,10 @@ using System.Linq;
 using System.Media;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Timetabled.Forms;
+using Timegraphik.Forms;
 using System.IO;
 
-namespace Timetabled {
+namespace Timegraphik {
     static class Program {
         /// <summary>
         /// The main entry point for the application.

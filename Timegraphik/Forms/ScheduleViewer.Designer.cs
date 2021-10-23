@@ -1,5 +1,5 @@
 ﻿
-namespace Timetabled.Forms {
+namespace Timegraphik.Forms {
     partial class ScheduleViewer {
         /// <summary>
         /// Required designer variable.

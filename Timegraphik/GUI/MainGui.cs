@@ -16,6 +16,7 @@ namespace Timegraphik.GUI {
     public class MainGui : GuiManager {
         public override void Initialize() {
             Calendar = Access<MonthCalendar>("SelectDate");
+            CalendarLabel = Access<Label>("ScheduleLabel");
             var testLoc = Access<Control>("TestLoc");
             scheduleOffset = testLoc.Location;
             testLoc.Dispose();
@@ -33,6 +34,8 @@ namespace Timegraphik.GUI {
 
             Dates = new State<DateTime>(() => Calendar.SelectionStart);
             Groups = new State<string>(() => GroupField.Text);
+
+            UpdateLabelDate();
 
             var calSize = Calendar.Size;
 
@@ -96,6 +99,7 @@ namespace Timegraphik.GUI {
         #endregion
 
         public MonthCalendar Calendar { get; private set; }
+        public Label CalendarLabel { get; private set; }
         public ScheduleField GroupField { get; private set; }
         public ScheduleField[,,] AllFields { get; }
         Button rightArrow, leftArrow;
@@ -358,11 +362,17 @@ namespace Timegraphik.GUI {
             SelectEntireWeek();
 
             Dates.Update();
+            UpdateLabelDate();
 
             if (scheduleLoaded && Groups.Latest != "") {
                 UnloadSchedule(Dates.Previous, Groups.Latest);
                 LoadSchedule();
             }
+        }
+
+        private void UpdateLabelDate() {
+            var date = Dates.Latest;
+            CalendarLabel.Text = $"Расписание: {date:dd MMMM} — {date.AddDays(5):dd MMMM (yyyy)}";
         }
 
         #endregion

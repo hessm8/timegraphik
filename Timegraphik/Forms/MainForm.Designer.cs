@@ -43,6 +43,7 @@ namespace Timegraphik.Forms {
             this.AddDataSelect = new System.Windows.Forms.ListBox();
             this.testGrid = new System.Windows.Forms.DataGridView();
             this.placeholderGroup = new System.Windows.Forms.ComboBox();
+            this.ScheduleLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.testGrid)).BeginInit();
             this.SuspendLayout();
@@ -147,7 +148,7 @@ namespace Timegraphik.Forms {
             // 
             // TestLoc
             // 
-            this.TestLoc.Location = new System.Drawing.Point(253, 50);
+            this.TestLoc.Location = new System.Drawing.Point(253, 64);
             this.TestLoc.Name = "TestLoc";
             this.TestLoc.Size = new System.Drawing.Size(229, 466);
             this.TestLoc.TabIndex = 27;
@@ -205,11 +206,22 @@ namespace Timegraphik.Forms {
             this.placeholderGroup.Size = new System.Drawing.Size(227, 21);
             this.placeholderGroup.TabIndex = 32;
             // 
+            // ScheduleLabel
+            // 
+            this.ScheduleLabel.AutoSize = true;
+            this.ScheduleLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ScheduleLabel.Location = new System.Drawing.Point(249, 41);
+            this.ScheduleLabel.Name = "ScheduleLabel";
+            this.ScheduleLabel.Size = new System.Drawing.Size(117, 20);
+            this.ScheduleLabel.TabIndex = 33;
+            this.ScheduleLabel.Text = "Расписание";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(832, 999);
+            this.Controls.Add(this.ScheduleLabel);
             this.Controls.Add(this.placeholderGroup);
             this.Controls.Add(this.testGrid);
             this.Controls.Add(this.CancelChangesButton);
@@ -220,8 +232,7 @@ namespace Timegraphik.Forms {
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1476, 1038);
+            this.MaximumSize = new System.Drawing.Size(1920, 1080);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(470, 1038);
             this.Name = "MainForm";
@@ -256,6 +267,7 @@ namespace Timegraphik.Forms {
         private System.Windows.Forms.ToolStripMenuItem функцииToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ViewScheduleMenuItem;
         private System.Windows.Forms.ToolStripMenuItem FiilRandomMenuItem;
+        private System.Windows.Forms.Label ScheduleLabel;
     }
 }
 

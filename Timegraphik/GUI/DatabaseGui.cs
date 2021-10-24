@@ -82,10 +82,13 @@ namespace Timegraphik.GUI {
         public void UnloadToStorage() {
             for (int listIndex = 0; listIndex < 4; listIndex++) {
                 Storage.Data[listIndex].Clear();
+
                 foreach (var i in EditedData[listIndex]) {
-                    Storage.Data[listIndex].Add(i);
+                    Storage.Data[listIndex].Add(i);                    
                 }
             }
+
+            SQLSystem.Unload();
         }
         public void LoadNewCategory() {
             // Update header when loading

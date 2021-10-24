@@ -5,12 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 using System.Data.SqlClient;
+using Timegraphik.Forms;
 
 namespace Timegraphik.Data {
-    public class SQLSystem {
-        public static string ConnectionString => @"Data Source=desktop-t7m86ng\sqlexpress;Initial Catalog=TimegraphikBD;Integrated Security=True;";
-		public SqlConnection connection;
-        public void Start() {
+    public static class SQLSystem {
+		public static string ConnectionString => @"Data Source=desktop-t7m86ng\sqlexpress;Initial Catalog=TimegraphikBD;Integrated Security=True;";
+		public static SqlConnection connection;
+
+		public static List<string> tables = new List<string>(){ "groups", "subjects", "teachers", "rooms" };
+
+        public static void Start() {
 			connection = new SqlConnection(ConnectionString);
 			connection.Open();
 
@@ -30,6 +34,33 @@ namespace Timegraphik.Data {
 			//";
 			//SqlCommand command = new SqlCommand(query, connection);
 			//command.ExecuteNonQuery();
+		}
+
+		//public static void nload() {
+		//	foreach (var table in tables) {
+		//              Query($"delete from {table}");					
+		//	}
+		//}
+
+		public static void Unload() {
+			QueryTables(t => $"delete from {t}");
+			QueryTables(t => {
+				var data = MainForm.Storage.Data[tables.IndexOf(t)];
+				var values = string.Join(", ", data);
+				return $"insert into {t} (name) values ({values})";
+			});
+		}
+
+		public static void QueryTables(Func<string, string> query) {
+			foreach (var table in tables) {
+				string tableQuery = query(table);
+				Query(tableQuery);
+			}
+		}
+
+		public static int Query(string query) {
+			var command = new SqlCommand(query, connection);
+			return command.ExecuteNonQuery();
 		}
 
     }

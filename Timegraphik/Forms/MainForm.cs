@@ -100,7 +100,7 @@ namespace Timegraphik.Forms {
             dbGui.LoadNewCategory();
         }
 
-        private void MenuExportJson(object sender, EventArgs e) {
+        private void MenuExport(object sender, EventArgs e) {
             var dialog = new SaveFileDialog() {
                 Filter = "JSON Data (*.json)|*.json|SQL Database (*.bak)|*.bak",
                 DefaultExt = "json",
@@ -122,6 +122,18 @@ namespace Timegraphik.Forms {
 
         private void pictureBox4_Click(object sender, EventArgs e) {
             LoadFromStorage(sender, e);
+        }
+
+        private void MenuImport(object sender, EventArgs e) {
+            var dialog = new OpenFileDialog() {
+                Filter = "JSON Data (*.json)|*.json|SQL Database (*.bak)|*.bak",
+                DefaultExt = "json",
+                AddExtension = true
+            };
+
+            if (dialog.ShowDialog() == DialogResult.Cancel) return;
+
+            if (dialog.FilterIndex == 1) Storage.LoadFile(dialog.FileName);
         }
     }
 }

@@ -70,6 +70,13 @@ namespace Timegraphik.Data {
             File.WriteAllText(filename, serializedData);
         }
 
+        public void LoadFile(string filename) {
+            string serializedData = File.ReadAllText(filename);
+            if (new FileInfo(DataFilepath).Length != 0) {
+                Data = JsonConvert.DeserializeObject<ScheduleData>(serializedData, JsonSettings);
+            }
+        }
+
         public string SerializeOnDate(DateTime date) {
             if (!Schedules.ContainsKey(date)) return null;
             return JsonConvert.SerializeObject(Schedules[date], JsonSettings);

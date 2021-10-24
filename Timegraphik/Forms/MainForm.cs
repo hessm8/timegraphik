@@ -100,10 +100,6 @@ namespace Timegraphik.Forms {
             dbGui.LoadNewCategory();
         }
 
-        private void FillRandomData(object sender, EventArgs e) {
-            mainGui.FieldsAllRandom();
-        }
-
         private void MenuExportJson(object sender, EventArgs e) {
             var dialog = new SaveFileDialog() {
                 Filter = "JSON Data (*.json)|*.json|SQL Database (*.bak)|*.bak",
@@ -114,6 +110,10 @@ namespace Timegraphik.Forms {
             if (dialog.ShowDialog() == DialogResult.Cancel) return;
 
             if (dialog.FilterIndex == 1) Storage.SaveFile(dialog.FileName);
+        }
+
+        private void FiilRandomMenuItem_Click(object sender, EventArgs e) {
+            mainGui.FieldsAllRandom();
         }
     }
 }

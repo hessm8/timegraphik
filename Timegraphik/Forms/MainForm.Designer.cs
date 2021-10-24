@@ -28,9 +28,14 @@ namespace Timegraphik.Forms {
             this.SelectDate = new System.Windows.Forms.MonthCalendar();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.базаДанныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.экспортToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.импортToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.экспортToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.функцииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ViewScheduleMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FiilRandomMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HelpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TestLoc = new System.Windows.Forms.Button();
             this.CancelChangesButton = new System.Windows.Forms.Button();
@@ -38,11 +43,6 @@ namespace Timegraphik.Forms {
             this.AddDataSelect = new System.Windows.Forms.ListBox();
             this.testGrid = new System.Windows.Forms.DataGridView();
             this.placeholderGroup = new System.Windows.Forms.ComboBox();
-            this.импортToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.функцииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.FiilRandomMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ViewScheduleMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.testGrid)).BeginInit();
             this.SuspendLayout();
@@ -83,10 +83,28 @@ namespace Timegraphik.Forms {
             this.базаДанныхToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.базаДанныхToolStripMenuItem.Text = "База данных";
             // 
+            // экспортToolStripMenuItem
+            // 
+            this.экспортToolStripMenuItem.Name = "экспортToolStripMenuItem";
+            this.экспортToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.экспортToolStripMenuItem.Text = "Экспорт";
+            this.экспортToolStripMenuItem.Click += new System.EventHandler(this.MenuExportJson);
+            // 
+            // импортToolStripMenuItem
+            // 
+            this.импортToolStripMenuItem.Name = "импортToolStripMenuItem";
+            this.импортToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.импортToolStripMenuItem.Text = "Импорт";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(129, 6);
+            // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.editToolStripMenuItem.Text = "Настроить";
             // 
             // clearToolStripMenuItem
@@ -98,12 +116,27 @@ namespace Timegraphik.Forms {
             this.clearToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clearToolStripMenuItem.Text = "Очистить";
             // 
-            // экспортToolStripMenuItem
+            // функцииToolStripMenuItem
             // 
-            this.экспортToolStripMenuItem.Name = "экспортToolStripMenuItem";
-            this.экспортToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.экспортToolStripMenuItem.Text = "Экспорт";
-            this.экспортToolStripMenuItem.Click += new System.EventHandler(this.MenuExportJson);
+            this.функцииToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ViewScheduleMenuItem,
+            this.FiilRandomMenuItem});
+            this.функцииToolStripMenuItem.Name = "функцииToolStripMenuItem";
+            this.функцииToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.функцииToolStripMenuItem.Text = "Функции";
+            // 
+            // ViewScheduleMenuItem
+            // 
+            this.ViewScheduleMenuItem.Name = "ViewScheduleMenuItem";
+            this.ViewScheduleMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.ViewScheduleMenuItem.Text = "Просмотр расписания";
+            // 
+            // FiilRandomMenuItem
+            // 
+            this.FiilRandomMenuItem.Name = "FiilRandomMenuItem";
+            this.FiilRandomMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.FiilRandomMenuItem.Text = "Случайное расписание";
+            this.FiilRandomMenuItem.Click += new System.EventHandler(this.FiilRandomMenuItem_Click);
             // 
             // HelpMenuItem
             // 
@@ -171,38 +204,6 @@ namespace Timegraphik.Forms {
             this.placeholderGroup.Name = "placeholderGroup";
             this.placeholderGroup.Size = new System.Drawing.Size(227, 21);
             this.placeholderGroup.TabIndex = 32;
-            // 
-            // импортToolStripMenuItem
-            // 
-            this.импортToolStripMenuItem.Name = "импортToolStripMenuItem";
-            this.импортToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.импортToolStripMenuItem.Text = "Импорт";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
-            // 
-            // функцииToolStripMenuItem
-            // 
-            this.функцииToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ViewScheduleMenuItem,
-            this.FiilRandomMenuItem});
-            this.функцииToolStripMenuItem.Name = "функцииToolStripMenuItem";
-            this.функцииToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-            this.функцииToolStripMenuItem.Text = "Функции";
-            // 
-            // FiilRandomMenuItem
-            // 
-            this.FiilRandomMenuItem.Name = "FiilRandomMenuItem";
-            this.FiilRandomMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.FiilRandomMenuItem.Text = "Случайное расписание";
-            // 
-            // ViewScheduleMenuItem
-            // 
-            this.ViewScheduleMenuItem.Name = "ViewScheduleMenuItem";
-            this.ViewScheduleMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.ViewScheduleMenuItem.Text = "Просмотр расписания";
             // 
             // MainForm
             // 

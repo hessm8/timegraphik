@@ -36,18 +36,18 @@ namespace Timegraphik.Data {
 			//command.ExecuteNonQuery();
 		}
 
-		//public static void nload() {
-		//	foreach (var table in tables) {
-		//              Query($"delete from {table}");					
-		//	}
-		//}
-
 		public static void Unload() {
 			QueryTables(t => $"delete from {t}");
 			QueryTables(t => {
 				var data = MainForm.Storage.Data[tables.IndexOf(t)];
-				var values = string.Join(", ", data);
-				return $"insert into {t} (name) values ({values})";
+
+				string values = "(";
+				foreach (var entry in data) {
+					values += $"'{entry}'), (";
+                }
+				values = values.Substring(0, values.Length - 3);
+
+				return $"insert into {t} (name) values {values};";
 			});
 		}
 

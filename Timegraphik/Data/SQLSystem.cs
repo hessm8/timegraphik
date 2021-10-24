@@ -19,22 +19,22 @@ namespace Timegraphik.Data {
 			connection.Open();
 
    //         string query = @"
-			//	create table groups ( name varchar(50) );
-			//	create table subjects ( name varchar(50) );
-			//	create table teachers ( name varchar(50) );
-			//	create table rooms ( name varchar(50) );
+			//	create table groups ( name nvarchar(50) );
+			//	create table subjects ( name nvarchar(50) );
+			//	create table teachers ( name nvarchar(50) );
+			//	create table rooms ( name nvarchar(50) );
 			//	create table lessons ( 
 			//		day date,
 			//		number int,
-			//		groups varchar(50),
-			//		subjects varchar(50),
-			//		teachers varchar(50),
-			//		rooms varchar(50)
+			//		groups nvarchar(50),
+			//		subjects nvarchar(50),
+			//		teachers nvarchar(50),
+			//		rooms nvarchar(50)
 			//	);
 			//";
-			//SqlCommand command = new SqlCommand(query, connection);
-			//command.ExecuteNonQuery();
-		}
+   //         SqlCommand command = new SqlCommand(query, connection);
+   //         command.ExecuteNonQuery();
+        }
 
 		public static void Unload() {
 			QueryTables(t => $"delete from {t}");

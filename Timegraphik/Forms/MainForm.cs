@@ -87,7 +87,7 @@ namespace Timegraphik.Forms {
         }
 
         private void HelpMenuItem_Click(object sender, EventArgs e) {
-            new AboutBox().Show();
+            new AboutBox().ShowDialog();
         }
 
         private void AcceptChanges(object sender, EventArgs e) {
@@ -102,6 +102,18 @@ namespace Timegraphik.Forms {
 
         private void FillRandomData(object sender, EventArgs e) {
             mainGui.FieldsAllRandom();
+        }
+
+        private void MenuExportJson(object sender, EventArgs e) {
+            var dialog = new SaveFileDialog() {
+                Filter = "JSON Data (*.json)|*.json|SQL Database (*.bak)|*.bak",
+                DefaultExt = "json",
+                AddExtension = true
+            };
+
+            if (dialog.ShowDialog() == DialogResult.Cancel) return;
+
+            if (dialog.FilterIndex == 1) Storage.SaveFile(dialog.FileName);
         }
     }
 }

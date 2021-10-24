@@ -65,6 +65,11 @@ namespace Timegraphik.Data {
             File.WriteAllText(SettingsFilepath, serializedData);
         }
 
+        public void SaveFile(string filename) {
+            string serializedData = JsonConvert.SerializeObject(Data, JsonSettings);
+            File.WriteAllText(filename, serializedData);
+        }
+
         public string SerializeOnDate(DateTime date) {
             if (!Schedules.ContainsKey(date)) return null;
             return JsonConvert.SerializeObject(Schedules[date], JsonSettings);

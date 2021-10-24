@@ -27,11 +27,10 @@ namespace Timegraphik.Forms {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.SelectDate = new System.Windows.Forms.MonthCalendar();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.ViewScheduleMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.базаДанныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.FiilRandomMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.экспортToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HelpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TestLoc = new System.Windows.Forms.Button();
             this.CancelChangesButton = new System.Windows.Forms.Button();
@@ -39,6 +38,11 @@ namespace Timegraphik.Forms {
             this.AddDataSelect = new System.Windows.Forms.ListBox();
             this.testGrid = new System.Windows.Forms.DataGridView();
             this.placeholderGroup = new System.Windows.Forms.ComboBox();
+            this.импортToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.функцииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FiilRandomMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ViewScheduleMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.testGrid)).BeginInit();
             this.SuspendLayout();
@@ -57,9 +61,8 @@ namespace Timegraphik.Forms {
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ViewScheduleMenuItem,
             this.базаДанныхToolStripMenuItem,
-            this.FiilRandomMenuItem,
+            this.функцииToolStripMenuItem,
             this.HelpMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -68,15 +71,12 @@ namespace Timegraphik.Forms {
             this.menuStrip1.TabIndex = 26;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // ViewScheduleMenuItem
-            // 
-            this.ViewScheduleMenuItem.Name = "ViewScheduleMenuItem";
-            this.ViewScheduleMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.ViewScheduleMenuItem.Text = "Просмотр";
-            // 
             // базаДанныхToolStripMenuItem
             // 
             this.базаДанныхToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.экспортToolStripMenuItem,
+            this.импортToolStripMenuItem,
+            this.toolStripSeparator1,
             this.editToolStripMenuItem,
             this.clearToolStripMenuItem});
             this.базаДанныхToolStripMenuItem.Name = "базаДанныхToolStripMenuItem";
@@ -86,21 +86,24 @@ namespace Timegraphik.Forms {
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editToolStripMenuItem.Text = "Настроить";
             // 
             // clearToolStripMenuItem
             // 
+            this.clearToolStripMenuItem.AutoSize = false;
+            this.clearToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.clearToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            this.clearToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clearToolStripMenuItem.Text = "Очистить";
             // 
-            // FiilRandomMenuItem
+            // экспортToolStripMenuItem
             // 
-            this.FiilRandomMenuItem.Name = "FiilRandomMenuItem";
-            this.FiilRandomMenuItem.Size = new System.Drawing.Size(148, 20);
-            this.FiilRandomMenuItem.Text = "Случайное расписание";
-            this.FiilRandomMenuItem.Click += new System.EventHandler(this.FillRandomData);
+            this.экспортToolStripMenuItem.Name = "экспортToolStripMenuItem";
+            this.экспортToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.экспортToolStripMenuItem.Text = "Экспорт";
+            this.экспортToolStripMenuItem.Click += new System.EventHandler(this.MenuExportJson);
             // 
             // HelpMenuItem
             // 
@@ -169,6 +172,38 @@ namespace Timegraphik.Forms {
             this.placeholderGroup.Size = new System.Drawing.Size(227, 21);
             this.placeholderGroup.TabIndex = 32;
             // 
+            // импортToolStripMenuItem
+            // 
+            this.импортToolStripMenuItem.Name = "импортToolStripMenuItem";
+            this.импортToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.импортToolStripMenuItem.Text = "Импорт";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // функцииToolStripMenuItem
+            // 
+            this.функцииToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ViewScheduleMenuItem,
+            this.FiilRandomMenuItem});
+            this.функцииToolStripMenuItem.Name = "функцииToolStripMenuItem";
+            this.функцииToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.функцииToolStripMenuItem.Text = "Функции";
+            // 
+            // FiilRandomMenuItem
+            // 
+            this.FiilRandomMenuItem.Name = "FiilRandomMenuItem";
+            this.FiilRandomMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.FiilRandomMenuItem.Text = "Случайное расписание";
+            // 
+            // ViewScheduleMenuItem
+            // 
+            this.ViewScheduleMenuItem.Name = "ViewScheduleMenuItem";
+            this.ViewScheduleMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.ViewScheduleMenuItem.Text = "Просмотр расписания";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -205,7 +240,6 @@ namespace Timegraphik.Forms {
         private System.Windows.Forms.MonthCalendar SelectDate;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem HelpMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ViewScheduleMenuItem;
         private System.Windows.Forms.Button TestLoc;
         private System.Windows.Forms.Button CancelChangesButton;
         private System.Windows.Forms.Button AcceptChangesButton;
@@ -215,6 +249,11 @@ namespace Timegraphik.Forms {
         private System.Windows.Forms.ToolStripMenuItem базаДанныхToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem экспортToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem импортToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem функцииToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ViewScheduleMenuItem;
         private System.Windows.Forms.ToolStripMenuItem FiilRandomMenuItem;
     }
 }

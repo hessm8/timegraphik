@@ -209,7 +209,7 @@ namespace Timegraphik.Forms {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 530);
+            this.ClientSize = new System.Drawing.Size(832, 999);
             this.Controls.Add(this.placeholderGroup);
             this.Controls.Add(this.testGrid);
             this.Controls.Add(this.CancelChangesButton);
@@ -221,9 +221,9 @@ namespace Timegraphik.Forms {
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1476, 569);
+            this.MaximumSize = new System.Drawing.Size(1476, 1038);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(470, 569);
+            this.MinimumSize = new System.Drawing.Size(470, 1038);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Timegraphik";

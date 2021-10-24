@@ -116,11 +116,13 @@ namespace Timegraphik.GUI {
                 var dayString = Culture.DateTimeFormat.GetDayName((DayOfWeek)day + 1);
                 dayString = Culture.TextInfo.ToTitleCase(dayString);
 
+                var dayBoxOffset = day >= 3 ? new Point(-3 * distance, 470) : new Point();
+
                 var dayGroup = new GroupBox() {
                     Text = dayString,
                     Location = new Point(
-                        day * distance + scheduleOffset.X,
-                        scheduleOffset.Y),
+                        day * distance + scheduleOffset.X + dayBoxOffset.X,
+                        scheduleOffset.Y + dayBoxOffset.Y),
                     Size = new Size(fieldSize.Width + 42, 465)
                 };
 

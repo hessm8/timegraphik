@@ -23,7 +23,7 @@ namespace Timegraphik.Forms {
         public MainForm() {
             InitializeComponent();
 
-            Size = MaximumSize;
+            //Size = MaximumSize;
 
             ViewScheduleMenuItem.Click += ViewSchedule;
             editToolStripMenuItem.Click += OpenDatabase;
@@ -35,7 +35,7 @@ namespace Timegraphik.Forms {
         }
 
         private void ClearDatabase(object sender, EventArgs e) {
-            var res = MessageBox.Show("Вы действительно хотите очистить данные?",
+            var res = MessageBox.Show("Вы действительно хотите очистить всю базу данных?",
                 "Предупреждение",
                 MessageBoxButtons.YesNo);
             if (res == DialogResult.Yes) {
@@ -112,18 +112,6 @@ namespace Timegraphik.Forms {
             if (dialog.FilterIndex == 1) Storage.SaveFile(dialog.FileName);
         }
 
-        private void FiilRandomMenuItem_Click(object sender, EventArgs e) {
-            mainGui.FieldsAllRandom();
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e) {
-            AcceptChanges(sender, e);
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e) {
-            LoadFromStorage(sender, e);
-        }
-
         private void MenuImport(object sender, EventArgs e) {
             var dialog = new OpenFileDialog() {
                 Filter = "JSON Data (*.json)|*.json|SQL Database (*.bak)|*.bak",
@@ -134,6 +122,50 @@ namespace Timegraphik.Forms {
             if (dialog.ShowDialog() == DialogResult.Cancel) return;
 
             if (dialog.FilterIndex == 1) Storage.LoadFile(dialog.FileName);
+        }
+
+        private void FiilRandomMenuItem_Click(object sender, EventArgs e) {
+            mainGui.FieldsAllRandom();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e) {
+            MenuExport(sender, e);
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e) {
+            MenuImport(sender, e);
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e) {
+            FiilRandomMenuItem_Click(sender, e);
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e) {
+            ClearDatabase(sender, e);
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e) {
+            ViewSchedule(sender, e);
+        }
+
+        private void pictureBox11_MouseHover(object sender, EventArgs e) {
+            new ToolTip().SetToolTip(pictureBox11, "Просмотр расписания");
+        }
+
+        private void pictureBox9_MouseHover(object sender, EventArgs e) {
+            new ToolTip().SetToolTip(pictureBox9, "Случайное расписание");
+        }
+
+        private void pictureBox10_MouseHover(object sender, EventArgs e) {
+            new ToolTip().SetToolTip(pictureBox10, "Очистить базу данных");
+        }
+
+        private void pictureBox3_MouseHover(object sender, EventArgs e) {
+            new ToolTip().SetToolTip(pictureBox3, "Экспорт");
+        }
+
+        private void pictureBox4_MouseHover(object sender, EventArgs e) {
+            new ToolTip().SetToolTip(pictureBox4, "Импорт");
         }
     }
 }

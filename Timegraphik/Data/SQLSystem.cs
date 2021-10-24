@@ -63,5 +63,29 @@ namespace Timegraphik.Data {
 			return command.ExecuteNonQuery();
 		}
 
+		//private static void TestParameters() {
+		//	string query = "INSERT INTO chitateli (familia,imia,otchestvo) VALUES (@familia,@imia,@otchestvo);";
+		//	SqlCommand com = new SqlCommand(query, connection);
+		//	com.Parameters.AddWithValue("@familia", "abc"); // textBox1.Text (понятно откуда поди) вместо abc
+		//	com.Parameters.AddWithValue("@imia", "abc");
+		//	com.Parameters.AddWithValue("@otchestvo", "abc");
+		//	int chitatel = (int)com.ExecuteScalar();
+
+		//	com.Parameters.Clear();
+		//	com.CommandText = "INSERT INTO literatura (nazvanie,kategoria,avtor,izdatelstvo) VALUES (@nazvanie,@kategoria,@avtor,@izdatelstvo);";
+		//	com.Parameters.AddWithValue("@nazvanie", "abc");
+		//	com.Parameters.AddWithValue("@kategoria", "abc");
+		//	com.Parameters.AddWithValue("@avtor", "abc");
+		//	com.Parameters.AddWithValue("@izdatelstvo", "abc");
+		//	int literatura = (int)com.ExecuteScalar();
+
+		//	com.Parameters.Clear();
+		//	com.CommandText = "INSERT INTO vidacha_literaturi (chitatel,literatura,data_vidachi,srok_vidachi) VALUES (@chitatel,@literatura,@data_vidachi,@srok_vidachi);";
+		//	com.Parameters.AddWithValue("@chitatel", chitatel);
+		//	com.Parameters.AddWithValue("@literatura", literatura);
+		//	com.Parameters.AddWithValue("@data_vidachi", "abc");
+		//	com.Parameters.AddWithValue("@srok_vidachi", "abc");
+		//	com.ExecuteNonQuery();
+		//}
     }
 }

@@ -210,7 +210,7 @@ namespace Timegraphik.Forms {
             // 
             this.ScheduleLabel.AutoSize = true;
             this.ScheduleLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ScheduleLabel.Location = new System.Drawing.Point(249, 41);
+            this.ScheduleLabel.Location = new System.Drawing.Point(257, 35);
             this.ScheduleLabel.Name = "ScheduleLabel";
             this.ScheduleLabel.Size = new System.Drawing.Size(117, 20);
             this.ScheduleLabel.TabIndex = 33;
@@ -220,7 +220,7 @@ namespace Timegraphik.Forms {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 999);
+            this.ClientSize = new System.Drawing.Size(832, 1000);
             this.Controls.Add(this.ScheduleLabel);
             this.Controls.Add(this.placeholderGroup);
             this.Controls.Add(this.testGrid);
@@ -232,7 +232,7 @@ namespace Timegraphik.Forms {
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximumSize = new System.Drawing.Size(1920, 1080);
+            this.MaximumSize = new System.Drawing.Size(1920, 1055);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(470, 1038);
             this.Name = "MainForm";

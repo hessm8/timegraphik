@@ -249,6 +249,7 @@
     <Content Include="Resources\bruh.ico" />
     <Content Include="Resources\bruh.png" />
     <Content Include="Resources\russian_carpet.jpg" />
+    <Content Include="Resources\SectionSeparator.png" />
     <Content Include="Resources\timetabled_alt.ico" />
     <Content Include="Resources\timetabled_alt.png" />
     <Content Include="Resources\timetabled.ico" />

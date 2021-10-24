@@ -131,6 +131,8 @@ namespace Timegraphik.GUI {
                 } else Text = "";
             }
 
+            if (Type == FieldType.Group) return;
+
             float fontSize;
             if (Text.Length > 25) fontSize = 160f / 25;
             else if (Text.Length <= 20) fontSize = 8;

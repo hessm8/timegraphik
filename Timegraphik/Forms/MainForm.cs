@@ -115,5 +115,13 @@ namespace Timegraphik.Forms {
         private void FiilRandomMenuItem_Click(object sender, EventArgs e) {
             mainGui.FieldsAllRandom();
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e) {
+            AcceptChanges(sender, e);
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e) {
+            LoadFromStorage(sender, e);
+        }
     }
 }

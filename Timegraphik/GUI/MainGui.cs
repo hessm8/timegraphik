@@ -24,8 +24,9 @@ namespace Timegraphik.GUI {
             var placeholderGroup = Access<ComboBox>("placeholderGroup");
             GroupField = new ScheduleField(this) {
                 Location = placeholderGroup.Location,
-                Size = placeholderGroup.Size
+                Size = placeholderGroup.Size                
             };
+            GroupField.Font = new Font(GroupField.Font.FontFamily, 14, GroupField.Font.Style);
             placeholderGroup.Dispose();
 
             Controls.Add(GroupField);

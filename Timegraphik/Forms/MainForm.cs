@@ -18,8 +18,8 @@ using System.IO;
 namespace Timegraphik.Forms {
     public partial class MainForm : Form {
         public static Storage Storage { get; } = new Storage();
-        MainGui mainGui;
-        DatabaseGui dbGui;
+        public static MainGui mainGui;
+        public static DatabaseGui dbGui;
         public MainForm() {
             InitializeComponent();
 
@@ -95,7 +95,7 @@ namespace Timegraphik.Forms {
             dbGui.UnloadToStorage();
         }
 
-        private void LoadFromStorage(object sender, EventArgs e) {
+        public static void LoadFromStorage(object sender, EventArgs e) {
             dbGui.LoadFromStorage();
             dbGui.LoadNewCategory();
         }

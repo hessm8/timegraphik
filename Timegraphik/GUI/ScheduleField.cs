@@ -127,6 +127,7 @@ namespace Timegraphik.GUI {
 
                 if (popupResult == DialogResult.Yes) {
                     Category.Add(Text);
+                    MainForm.LoadFromStorage(sender, e);
                 } else Text = "";
             }
 

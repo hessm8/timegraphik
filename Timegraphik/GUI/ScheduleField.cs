@@ -128,7 +128,13 @@ namespace Timegraphik.GUI {
                 if (popupResult == DialogResult.Yes) {
                     Category.Add(Text);
                 } else Text = "";
-            }            
+            }
+
+            float fontSize;
+            if (Text.Length > 25) fontSize = 160f / 25;
+            else if (Text.Length <= 20) fontSize = 8;
+            else fontSize = 160f / Text.Length;
+            Font = new Font(Font.FontFamily, fontSize, Font.Style);
         }
 
         public void FillRandom() {

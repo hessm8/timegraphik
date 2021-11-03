@@ -10,37 +10,55 @@ using System.Windows.Forms;
 
 namespace Timegraphik.Data {
     public static class SQLSystem {
-		public static string ConnectionString => @"Data Source=desktop-t7m86ng\sqlexpress;Initial Catalog=TimegraphikBD;Integrated Security=True;";
+		public static string ConnectionString => @"Data Source=desktop-t7m86ng\sqlexpress;Initial Catalog=timegraphik;Integrated Security=True;";
 		public static SqlConnection connection;
 
 		private static List<string> tables = new List<string>(){ "groups", "subjects", "teachers", "rooms" };
 
         public static void Start() {
+			if (!MainForm.Storage.Settings.Initialized) {
+				string connectionString = @"Data Source=desktop-t7m86ng\sqlexpress;Initial Catalog=master;Integrated Security=True;";
+				using (SqlConnection connection = new SqlConnection(connectionString)) {
+					connection.Open();
+					SqlCommand cmd = new SqlCommand();
+					cmd.CommandText = @"
+						CREATE DATABASE timegraphik 
+						COLLATE Cyrillic_General_CI_AS;
+					";
+					cmd.Connection = connection;
+					cmd.ExecuteNonQuery();
+				}
+			}
+
 			connection = new SqlConnection(ConnectionString);
 			connection.Open();
 
-            string query = @"
-				create table groups ( name nvarchar(50) );
-				create table subjects ( name nvarchar(50) );
-				create table teachers ( name nvarchar(50) );
-				create table rooms ( name nvarchar(50) );
-				create table lessons ( 
-					day date,
-					group nvarchar(50),
-					number int,					
-					subject nvarchar(50),
-					teacher nvarchar(50),
-					room nvarchar(50)
-				);
-			";
-            SqlCommand command = new SqlCommand(query, connection);
-            command.ExecuteNonQuery();
+			if (!MainForm.Storage.Settings.Initialized) {
+				string query = @"
+					create table groups ( name nvarchar(50) );
+					create table subjects ( name nvarchar(50) );
+					create table teachers ( name nvarchar(50) );
+					create table rooms ( name nvarchar(50) );
+					create table lessons ( 
+						day date,
+						groupname nvarchar(50),
+						number int,					
+						subject nvarchar(50),
+						teacher nvarchar(50),
+						room nvarchar(50)
+					);
+				";
+				SqlCommand command = new SqlCommand(query, connection);
+				command.ExecuteNonQuery();
+
+				MainForm.Storage.Settings.Initialized = true;
+			}
         }
 
 		public static void SchedulesToStorage() {
 
 			var command = connection.CreateCommand();
-			command.CommandText = "select * from lessons order by day, groups, number";
+			command.CommandText = "select * from lessons order by day, groupname, number";
 			var reader = command.ExecuteReader();
 
 			var classes = MainForm.Storage.Schedules;
@@ -92,9 +110,9 @@ namespace Timegraphik.Data {
 
 						command.Parameters.Clear();
 
-						command.CommandText = "insert into lessons values(@day, @group, @num, @subject, @teacher, @room)";
+						command.CommandText = "insert into lessons values(@day, @groupname, @num, @subject, @teacher, @room)";
 						command.Parameters.AddWithValue("@day", date);						
-						command.Parameters.AddWithValue("@group", group);
+						command.Parameters.AddWithValue("@groupname", group);
 						command.Parameters.AddWithValue("@num", num);
 						command.Parameters.AddWithValue("@subject", lesson.subject);
 						command.Parameters.AddWithValue("@teacher", lesson.teacher);
@@ -129,17 +147,21 @@ namespace Timegraphik.Data {
 
 		public static void StorageToTables() {
 			QueryTables(t => $"delete from {t}");
-			QueryTables(t => {
-				var data = MainForm.Storage.Data[tables.IndexOf(t)];
+			try {
+				QueryTables(t => {
+					var data = MainForm.Storage.Data[tables.IndexOf(t)];
 
-				string values = "(";
-				foreach (var entry in data) {
-					values += $"'{entry}'), (";
-                }
-				values = values.Substring(0, values.Length - 3);
+					string values = "(";
+					foreach (var entry in data) {
+						values += $"'{entry}'), (";
+					}
+					values = values.Substring(0, values.Length - 3);
 
-				return $"insert into {t} (name) values {values};";
-			});
+					return $"insert into {t} (name) values {values};";
+				});
+			} catch {
+				return; 
+			}
 		}
 
 		public static void QueryTables(Func<string, string> query) {

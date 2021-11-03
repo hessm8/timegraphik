@@ -45,9 +45,7 @@ namespace Timegraphik.Forms {
         }
 
         
-        private void Form_OnLoad(object sender, EventArgs e) {
-            SQLSystem.Start();
-
+        private void Form_OnLoad(object sender, EventArgs e) {           
             Storage.Load();
             mainGui = new MainGui(Controls);
             dbGui = new DatabaseGui(Controls);
@@ -58,6 +56,8 @@ namespace Timegraphik.Forms {
             }
             SelectFirstGroup(sender, e);
             LoadFromStorage(sender, e);
+
+            SQLSystem.Start();
         }
 
         private void GroupsCheck(object sender, EventArgs e) {

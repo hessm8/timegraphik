@@ -85,10 +85,7 @@ namespace Timegraphik.Data {
 					classes[day][group][number] = new Lesson(subject, teacher, room);
 				}
 			}
-			reader.Close();
-			
-
-
+			reader.Close();	
 		}
 
 		public static void StorageToSchedules() {

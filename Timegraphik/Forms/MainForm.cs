@@ -34,6 +34,8 @@ namespace Timegraphik.Forms {
             CancelChangesButton.Click += LoadFromStorage;
         }
 
+        private static ToolTip tooltip = new ToolTip();
+
         private void ClearDatabase(object sender, EventArgs e) {
             var res = MessageBox.Show("Вы действительно хотите очистить всю базу данных?",
                 "Предупреждение",
@@ -58,6 +60,18 @@ namespace Timegraphik.Forms {
             LoadFromStorage(sender, e);
 
             SQLSystem.Start();
+
+            SetTooltips();
+        }
+
+        private void SetTooltips() {
+            tooltip.SetToolTip(pictureBox11, "Просмотр расписания");
+            tooltip.SetToolTip(pictureBox9, "Случайное расписание");
+            tooltip.SetToolTip(pictureBox10, "Очистить базу данных");
+            tooltip.SetToolTip(iconPush, "Выгрузить на сервер");
+            tooltip.SetToolTip(iconPull, "Загрузить с сервера");
+            tooltip.SetToolTip(iconSave, "Экспорт");
+            tooltip.SetToolTip(iconOpen, "Импорт");
         }
 
         private void GroupsCheck(object sender, EventArgs e) {
@@ -157,23 +171,23 @@ namespace Timegraphik.Forms {
         }
 
         private void pictureBox11_MouseHover(object sender, EventArgs e) {
-            new ToolTip().SetToolTip(pictureBox11, "Просмотр расписания");
+            
         }
 
         private void pictureBox9_MouseHover(object sender, EventArgs e) {
-            new ToolTip().SetToolTip(pictureBox9, "Случайное расписание");
+            //tooltip.SetToolTip(pictureBox9, "Случайное расписание");
         }
 
         private void pictureBox10_MouseHover(object sender, EventArgs e) {
-            new ToolTip().SetToolTip(pictureBox10, "Очистить базу данных");
+            //tooltip.SetToolTip(pictureBox10, "Очистить базу данных");
         }
 
         private void pictureBox3_MouseHover(object sender, EventArgs e) {
-            new ToolTip().SetToolTip(iconPush, "Выгрузить на сервер");
+            //tooltip.SetToolTip(iconPush, "Выгрузить на сервер");
         }
 
         private void pictureBox4_MouseHover(object sender, EventArgs e) {
-            new ToolTip().SetToolTip(iconPull, "Загрузить с сервера");
+            //tooltip.SetToolTip(iconPull, "Загрузить с сервера");
         }
 
         private void iconSave_Click(object sender, EventArgs e) {
@@ -185,11 +199,11 @@ namespace Timegraphik.Forms {
         }
 
         private void iconSave_Hover(object sender, EventArgs e) {
-            new ToolTip().SetToolTip(iconSave, "Экспорт");
+            //tooltip.SetToolTip(iconSave, "Экспорт");
         }
 
         private void iconOpen_Hover(object sender, EventArgs e) {
-            new ToolTip().SetToolTip(iconOpen, "Импорт");
+            //tooltip.SetToolTip(iconOpen, "Импорт");
         }
     }
 }

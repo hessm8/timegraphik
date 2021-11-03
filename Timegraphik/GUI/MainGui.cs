@@ -200,7 +200,7 @@ namespace Timegraphik.GUI {
                     fieldsBlank.Add(blank);
                 }
 
-                // Remove empty lessons at end
+                // Remove empty lessons AT END
                 for (int l = groupCount - 1; l >= 0; l--) {
                     if (fieldsBlank[l]) lessons.RemoveAt(l);
                     else break;

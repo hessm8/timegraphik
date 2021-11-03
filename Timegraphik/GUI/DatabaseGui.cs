@@ -38,7 +38,7 @@ namespace Timegraphik.GUI {
 
             Selected = new State<string>(() => SelectList.SelectedItem.ToString());
 
-            EditedData = new ScheduleData();
+            LocalData = new ScheduleData();
             LoadFromStorage();
             LoadNewCategory();
 
@@ -66,43 +66,50 @@ namespace Timegraphik.GUI {
         public ListBox SelectList { get; private set; }
         private DataGridViewColumn Header => DataGrid.Columns[0];
 
-        public ScheduleData EditedData { get; private set; }
+        public ScheduleData LocalData { get; private set; }
         public State<string> Selected { get; private set; }
 
         #region Loading Data
 
-        public void LoadFromStorage() {            
+        // Loads new 'schedule' data into the local db 
+        public void LoadFromStorage() {
+            //SQLSystem.TablesToStorage();
+
             for (int listIndex = 0; listIndex < 4; listIndex++) {
-                EditedData[listIndex].Clear();
+                LocalData[listIndex].Clear();
                 foreach (var i in Storage.Data[listIndex]) {
-                    EditedData[listIndex].Add(i);
+                    LocalData[listIndex].Add(i);
                 }
             }
         }
+        // Passes / unloads data from local db into the main one
         public void UnloadToStorage() {
             for (int listIndex = 0; listIndex < 4; listIndex++) {
                 Storage.Data[listIndex].Clear();
 
-                foreach (var i in EditedData[listIndex]) {
+                foreach (var i in LocalData[listIndex]) {
                     Storage.Data[listIndex].Add(i);                    
                 }
             }
 
-            SQLSystem.Unload();
+            //SQLSystem.StorageToTables();
         }
+        
+        // Load data from storage into the DataGrid table
         public void LoadNewCategory() {
             // Update header when loading
             Header.HeaderText = Selected.Latest;
             
-            var unloadFrom = EditedData[Selected.Latest];
+            var unloadFrom = LocalData[Selected.Latest];
             // Load to the datagrid view
             DataGrid.Rows.Clear();
             foreach (var i in unloadFrom) {
                 DataGrid.Rows.Add(i);
             }
         }
+        // Transfer (unload) data from DataGrid table to local db
         public void UnloadCategory(string category) {
-            var loadTo = EditedData[category];
+            var loadTo = LocalData[category];
             // Load to local storage
             loadTo.Clear();
             for (int i = 0; i < DataGrid.RowCount - 1; i++) {

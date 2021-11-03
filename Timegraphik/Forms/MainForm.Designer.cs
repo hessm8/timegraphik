@@ -46,8 +46,8 @@ namespace Timegraphik.Forms {
             this.ScheduleLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.iconPush = new System.Windows.Forms.PictureBox();
+            this.iconPull = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -62,12 +62,14 @@ namespace Timegraphik.Forms {
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.iconOpen = new System.Windows.Forms.PictureBox();
+            this.iconSave = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.testGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPush)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPull)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -80,6 +82,8 @@ namespace Timegraphik.Forms {
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconOpen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconSave)).BeginInit();
             this.SuspendLayout();
             // 
             // SelectDate
@@ -121,26 +125,26 @@ namespace Timegraphik.Forms {
             // экспортToolStripMenuItem
             // 
             this.экспортToolStripMenuItem.Name = "экспортToolStripMenuItem";
-            this.экспортToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.экспортToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.экспортToolStripMenuItem.Text = "Экспорт";
             this.экспортToolStripMenuItem.Click += new System.EventHandler(this.MenuExport);
             // 
             // импортToolStripMenuItem
             // 
             this.импортToolStripMenuItem.Name = "импортToolStripMenuItem";
-            this.импортToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.импортToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.импортToolStripMenuItem.Text = "Импорт";
             this.импортToolStripMenuItem.Click += new System.EventHandler(this.MenuImport);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(129, 6);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.editToolStripMenuItem.Text = "Настроить";
             // 
             // clearToolStripMenuItem
@@ -195,7 +199,7 @@ namespace Timegraphik.Forms {
             this.CancelChangesButton.Location = new System.Drawing.Point(656, 331);
             this.CancelChangesButton.Margin = new System.Windows.Forms.Padding(2);
             this.CancelChangesButton.Name = "CancelChangesButton";
-            this.CancelChangesButton.Size = new System.Drawing.Size(198, 24);
+            this.CancelChangesButton.Size = new System.Drawing.Size(168, 24);
             this.CancelChangesButton.TabIndex = 30;
             this.CancelChangesButton.Text = "Загрузить данные";
             this.CancelChangesButton.UseVisualStyleBackColor = true;
@@ -205,7 +209,7 @@ namespace Timegraphik.Forms {
             this.AcceptChangesButton.Location = new System.Drawing.Point(656, 303);
             this.AcceptChangesButton.Margin = new System.Windows.Forms.Padding(2);
             this.AcceptChangesButton.Name = "AcceptChangesButton";
-            this.AcceptChangesButton.Size = new System.Drawing.Size(198, 24);
+            this.AcceptChangesButton.Size = new System.Drawing.Size(168, 24);
             this.AcceptChangesButton.TabIndex = 29;
             this.AcceptChangesButton.Text = "Применить изменения";
             this.AcceptChangesButton.UseVisualStyleBackColor = true;
@@ -275,29 +279,29 @@ namespace Timegraphik.Forms {
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(859, 304);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(24, 22);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox3.TabIndex = 36;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            this.pictureBox3.MouseHover += new System.EventHandler(this.pictureBox3_MouseHover);
+            this.iconPush.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconPush.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.iconPush.Location = new System.Drawing.Point(829, 303);
+            this.iconPush.Name = "pictureBox3";
+            this.iconPush.Size = new System.Drawing.Size(24, 22);
+            this.iconPush.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.iconPush.TabIndex = 36;
+            this.iconPush.TabStop = false;
+            this.iconPush.Click += new System.EventHandler(this.iconPushRemote);
+            this.iconPush.MouseHover += new System.EventHandler(this.pictureBox3_MouseHover);
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(859, 333);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(24, 22);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox4.TabIndex = 37;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            this.pictureBox4.MouseHover += new System.EventHandler(this.pictureBox4_MouseHover);
+            this.iconPull.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconPull.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.iconPull.Location = new System.Drawing.Point(829, 333);
+            this.iconPull.Name = "pictureBox4";
+            this.iconPull.Size = new System.Drawing.Size(24, 22);
+            this.iconPull.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.iconPull.TabIndex = 37;
+            this.iconPull.TabStop = false;
+            this.iconPull.Click += new System.EventHandler(this.iconPullRemote);
+            this.iconPull.MouseHover += new System.EventHandler(this.pictureBox4_MouseHover);
             // 
             // pictureBox5
             // 
@@ -355,6 +359,7 @@ namespace Timegraphik.Forms {
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
             this.pictureBox10.Location = new System.Drawing.Point(555, 29);
             this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Padding = new System.Windows.Forms.Padding(3);
             this.pictureBox10.Size = new System.Drawing.Size(32, 32);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox10.TabIndex = 43;
@@ -440,11 +445,41 @@ namespace Timegraphik.Forms {
             this.label2.TabIndex = 51;
             this.label2.Text = "Настройка базы данных";
             // 
+            // pictureBox17
+            // 
+            this.iconOpen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconOpen.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
+            this.iconOpen.Location = new System.Drawing.Point(859, 333);
+            this.iconOpen.Margin = new System.Windows.Forms.Padding(4, 3, 3, 3);
+            this.iconOpen.Name = "pictureBox17";
+            this.iconOpen.Size = new System.Drawing.Size(26, 22);
+            this.iconOpen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.iconOpen.TabIndex = 53;
+            this.iconOpen.TabStop = false;
+            this.iconOpen.Click += new System.EventHandler(this.iconOpen_Click);
+            this.iconOpen.MouseHover += new System.EventHandler(this.iconOpen_Hover);
+            // 
+            // pictureBox18
+            // 
+            this.iconSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconSave.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox18.Image")));
+            this.iconSave.Location = new System.Drawing.Point(859, 304);
+            this.iconSave.Name = "pictureBox18";
+            this.iconSave.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.iconSave.Size = new System.Drawing.Size(24, 22);
+            this.iconSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.iconSave.TabIndex = 52;
+            this.iconSave.TabStop = false;
+            this.iconSave.Click += new System.EventHandler(this.iconSave_Click);
+            this.iconSave.MouseHover += new System.EventHandler(this.iconSave_Hover);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 1000);
+            this.Controls.Add(this.iconOpen);
+            this.Controls.Add(this.iconSave);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox14);
@@ -459,8 +494,8 @@ namespace Timegraphik.Forms {
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.iconPull);
+            this.Controls.Add(this.iconPush);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ScheduleLabel);
@@ -487,8 +522,8 @@ namespace Timegraphik.Forms {
             ((System.ComponentModel.ISupportInitialize)(this.testGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPush)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPull)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -501,6 +536,8 @@ namespace Timegraphik.Forms {
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconOpen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconSave)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -528,8 +565,8 @@ namespace Timegraphik.Forms {
         private System.Windows.Forms.Label ScheduleLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox iconPush;
+        private System.Windows.Forms.PictureBox iconPull;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
@@ -544,6 +581,8 @@ namespace Timegraphik.Forms {
         private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox iconOpen;
+        private System.Windows.Forms.PictureBox iconSave;
     }
 }
 

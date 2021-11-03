@@ -128,12 +128,20 @@ namespace Timegraphik.Forms {
             mainGui.FieldsAllRandom();
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e) {
-            MenuExport(sender, e);
+        private void iconPushRemote(object sender, EventArgs e) {
+            AcceptChanges(sender, e);
+            SQLSystem.StorageToTables();
+
+            mainGui.UnloadSchedule(mainGui.Dates.Latest, mainGui.Groups.Latest);
+            SQLSystem.StorageToSchedules();
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e) {
-            MenuImport(sender, e);
+        private void iconPullRemote(object sender, EventArgs e) {
+            SQLSystem.TablesToStorage();
+            LoadFromStorage(sender, e);
+
+            SQLSystem.SchedulesToStorage();
+            mainGui.LoadSchedule();
         }
 
         private void pictureBox9_Click(object sender, EventArgs e) {
@@ -161,11 +169,27 @@ namespace Timegraphik.Forms {
         }
 
         private void pictureBox3_MouseHover(object sender, EventArgs e) {
-            new ToolTip().SetToolTip(pictureBox3, "Экспорт");
+            new ToolTip().SetToolTip(iconPush, "Выгрузить на сервер");
         }
 
         private void pictureBox4_MouseHover(object sender, EventArgs e) {
-            new ToolTip().SetToolTip(pictureBox4, "Импорт");
+            new ToolTip().SetToolTip(iconPull, "Загрузить с сервера");
+        }
+
+        private void iconSave_Click(object sender, EventArgs e) {
+            MenuExport(sender, e);
+        }
+
+        private void iconOpen_Click(object sender, EventArgs e) {
+            MenuImport(sender, e);
+        }
+
+        private void iconSave_Hover(object sender, EventArgs e) {
+            new ToolTip().SetToolTip(iconSave, "Экспорт");
+        }
+
+        private void iconOpen_Hover(object sender, EventArgs e) {
+            new ToolTip().SetToolTip(iconOpen, "Импорт");
         }
     }
 }

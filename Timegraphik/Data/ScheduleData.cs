@@ -23,9 +23,13 @@ namespace Timegraphik.Data {
         public List<string> this[string i] {
             get {
                 switch (i) {
+                    case "groups":
                     case "Группа": return groups;
+                    case "subjects":
                     case "Дисциплина": return subjects;
+                    case "teachers":
                     case "Преподаватель": return teachers;
+                    case "rooms":
                     case "Аудитория": return rooms;
                     default: throw new Exception("Invalid data");
                 }

@@ -70,8 +70,8 @@ namespace Timegraphik.Forms {
             tooltip.SetToolTip(pictureBox10, "Очистить базу данных");
             tooltip.SetToolTip(iconPush, "Выгрузить на сервер");
             tooltip.SetToolTip(iconPull, "Загрузить с сервера");
-            tooltip.SetToolTip(iconSave, "Экспорт");
-            tooltip.SetToolTip(iconOpen, "Импорт");
+            tooltip.SetToolTip(iconSave, "Сохранить в файл (Экспорт)");
+            tooltip.SetToolTip(iconOpen, "Открыть файл (Импорт)");
         }
 
         private void GroupsCheck(object sender, EventArgs e) {
@@ -116,8 +116,8 @@ namespace Timegraphik.Forms {
 
         private void MenuExport(object sender, EventArgs e) {
             var dialog = new SaveFileDialog() {
-                Filter = "JSON Data (*.json)|*.json|SQL Database (*.bak)|*.bak",
-                DefaultExt = "json",
+                Filter = "Timegraphik Data (*.tgd)|*.tgd",
+                DefaultExt = "tgd",
                 AddExtension = true
             };
 
@@ -128,8 +128,8 @@ namespace Timegraphik.Forms {
 
         private void MenuImport(object sender, EventArgs e) {
             var dialog = new OpenFileDialog() {
-                Filter = "JSON Data (*.json)|*.json|SQL Database (*.bak)|*.bak",
-                DefaultExt = "json",
+                Filter = "Timegraphik Data (*.tgd)|*.tgd",
+                DefaultExt = "tgd",                
                 AddExtension = true
             };
 
@@ -196,6 +196,8 @@ namespace Timegraphik.Forms {
 
         private void iconOpen_Click(object sender, EventArgs e) {
             MenuImport(sender, e);
+            LoadFromStorage(sender, e);
+            mainGui.LoadSchedule();
         }
 
         private void iconSave_Hover(object sender, EventArgs e) {

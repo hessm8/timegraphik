@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization;
+using System.Windows.Forms;
 using Newtonsoft.Json;
 
 using GroupToLessons = System.Collections.Generic
@@ -67,14 +68,31 @@ namespace Timegraphik.Data {
 
         public void SaveFile(string filename) {
             string serializedData = JsonConvert.SerializeObject(Data, JsonSettings);
+            serializedData += "|ENDF|";
+            serializedData += JsonConvert.SerializeObject(Schedules, JsonSettings);
             File.WriteAllText(filename, serializedData);
         }
 
         public void LoadFile(string filename) {
             string serializedData = File.ReadAllText(filename);
-            if (new FileInfo(DataFilepath).Length != 0) {
-                Data = JsonConvert.DeserializeObject<ScheduleData>(serializedData, JsonSettings);
-            }
+            var endpos = serializedData.IndexOf("|ENDF|");
+
+            var data = serializedData.Substring(0, endpos);
+            var schedules = serializedData.Substring(endpos + 6);
+
+            //MessageBox.Show(data);
+            //MessageBox.Show(schedules);
+
+            //if (new FileInfo(filename).Length == 0) {
+            //    MessageBox.Show("Ошибка", "Файл пуст");
+            //    return;
+            //}
+
+            Data = JsonConvert.DeserializeObject<ScheduleData>(data, JsonSettings);            
+
+            Schedules = (Dictionary<DateTime, GroupToLessons>)JsonConvert
+                .DeserializeObject(schedules, Schedules.GetType(), JsonSettings);
+
         }
 
         public string SerializeOnDate(DateTime date) {

@@ -8,6 +8,7 @@ namespace Timegraphik.Data {
         public bool AutosaveOnCategoryChange { get; set; }
         public bool UseViewerForm { get; set; }
         public string DefaultBrowser { get; set; }
+        public string ServerConnection { get; set; }
         public bool Initialized { get; set; }
         
         public void CheckDefaultBrowser(string testFilePath) {

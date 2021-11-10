@@ -59,6 +59,11 @@ namespace Timegraphik.Forms {
             SelectFirstGroup(sender, e);
             LoadFromStorage(sender, e);
 
+            if (Storage.Settings.ServerConnection == null) {
+                Storage.Settings.ServerConnection = "Data Source=desktop-t7m86ng\\sqlexpress;Initial Catalog=timegraphik;Integrated Security=True;";
+            }
+            SQLSystem.ConnectionString = Storage.Settings.ServerConnection;
+
             SQLSystem.Start();
 
             SetTooltips();

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Timegraphik.Data {
     public static class SQLSystem {
-		public static string ConnectionString => @"Data Source=desktop-t7m86ng\sqlexpress;Initial Catalog=timegraphik;Integrated Security=True;";
+		public static string ConnectionString { get; set; }
 		public static SqlConnection connection;
 
 		private static List<string> tables = new List<string>(){ "groups", "subjects", "teachers", "rooms" };

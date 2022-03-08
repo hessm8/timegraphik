@@ -1,2 +1,2 @@
 # Timegraphik
-Now works with SQL... or smth
+Timetabled but with connection to db (SQL Server)
